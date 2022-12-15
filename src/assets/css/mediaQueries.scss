@@ -1,0 +1,256 @@
+// MEDIA QUERY MEDIUM DISPLAY
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+    .App {
+        max-width: 992px;
+    }
+
+    .categoryListContainer {
+
+        &hover {
+            scale: none;
+            transform: none;
+        }
+
+        .categoryList {
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+    }
+
+    .randomContainer {
+        scale: none;
+        transform: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            padding: 0;
+            font-size: 3rem;
+        }
+    }
+
+    .mealContainer {
+        .mealListContainer {
+            // flex-wrap: nowrap;
+            flex-direction: column;
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
+    .headerContainer {
+        padding: 0;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        form {
+            text-align: center;
+
+            input[type=search] {
+                min-width: 50%;
+            }
+        }
+    }
+
+    .detailListContainer {
+        margin: 0;
+
+        div {
+            margin: 0;
+
+            .descriptionContainer {
+                margin: 0;
+                padding: 0;
+                flex-direction: column;
+                text-align: center;
+
+                div:nth-of-type(1) {
+                    width: 100%;
+                    text-align: left;
+                }
+
+                div:nth-of-type(2) {
+                    width: 100%;
+                    text-align: right;
+                    padding: 0 50px 20px 0;
+
+                    h1 {
+                        text-align: right;
+                    }
+
+                    div {
+                        text-align: right;
+                        justify-content: right;
+                        padding-bottom: 30px;
+                    }
+
+                    button {
+                        margin: 0 auto;
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// MEDIA QUERY MOBILE DISPLAY
+@media only screen and (min-width:350px) and (max-width: 576px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    .App {
+        max-width: 576px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .headerContainer {
+        h1 {
+            font-size: 2rem;
+            padding: 0;
+        }
+
+        form {
+            text-align: center;
+
+            input[type=search] {
+                width: 90%;
+                display: block;
+            }
+        }
+    }
+
+    .randomContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-radius: 0;
+        transition: none;
+
+        &:hover {
+            transition: none;
+            transform: none;
+            border-radius: 0;
+        }
+
+        h3 {
+            padding: 0;
+            font-size: 3rem;
+        }
+    }
+
+    .categoryListContainer {
+        padding: 0;
+
+        .categoryList {
+            display: block;
+
+            .categoryItemContainer {
+                border-radius: 0;
+                width: 100%;
+                height: 110%;
+
+                &:hover {
+                    transform: none;
+                    scale: none;
+                }
+            }
+        }
+    }
+
+    .searchContainer {
+        .searchListContainer {
+            display: block;
+
+            .searchItemContainer {
+                border-radius: 0;
+                width: 100%;
+                height: 110%;
+
+                &:hover {
+                    transform: none;
+                    scale: none;
+                }
+            }
+        }
+    }
+
+    .mealContainer {
+
+        .mealListContainer {
+
+            h1 {
+                width: 90%;
+            }
+
+            flex-direction: column;
+            width: 100%;
+            gap: 0;
+            margin: 0 auto;
+
+            .mealItemContainer {
+                border-radius: 0;
+
+                &:hover {
+                    transition: none;
+                    transform: none;
+                }
+            }
+        }
+    }
+
+    .detailListContainer {
+        margin: 0;
+
+        div {
+            margin: 0;
+            border-radius: 0;
+
+            .descriptionContainer {
+                margin: 0;
+                padding: 0;
+                flex-direction: column;
+                text-align: center;
+
+                div:nth-of-type(1) {
+                    width: 100%;
+                    text-align: left;
+                }
+
+                div:nth-of-type(2) {
+                    width: 100%;
+                    text-align: right;
+                    padding: 0 50px 20px 0;
+
+                    h1 {
+                        text-align: right;
+                    }
+
+                    div {
+                        text-align: right;
+                        justify-content: right;
+                        padding-bottom: 30px;
+                    }
+
+                    button {
+                        margin: 0 auto;
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}

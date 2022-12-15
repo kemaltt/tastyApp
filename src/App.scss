@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700');
+
+
+// GENERAL.SCSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    a,
+    button {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    img {
+        border-radius: 10px;
+    }
+}
+
+iframe {
+    width: 60%;
+    height: 300px;
+}
+
+/*-------LightDark-----*/
+
+.App {
+    min-width: 350px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: Amatic SC;
+
+    button {
+        background-color: #FF6E85;
+        border-style: none;
+        border-radius: 5px;
+        width: 150px;
+        color: white;
+    }
+}
+
+
+// CATEGORY.SCSS
+/*-------CATEGORY LIST--------*/
+
+.categoryListContainer {
+    color: #FF6E86;
+    font-weight: bold;
+    padding: 0 16%;
+
+    .categoryList {
+        width: 100%;
+        // display: grid;
+        // grid-template-columns: auto auto auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        padding: 4vh 4%;
+    }
+}
+
+/*------CATEGORY ITEM------*/
+.randomContainer {
+    width: 276px;
+}
+
+.categoryItemContainer,
+.randomContainer {
+    background-color: #FF6E86;
+    border-radius: 10px;
+    color: white;
+    height: 280px;
+    text-align: center;
+    transition: all 0.5s;
+
+    h1 {
+        padding: 3vh 0 1vh 0;
+        font-size: 3rem;
+        text-decoration: none;
+    }
+
+    img {
+        padding: 20px 10px;
+        width: 90%;
+        height: 200px;
+        object-fit: contain;
+    }
+
+    h3 {
+        padding-top: 40%;
+        font-size: 3.5rem;
+    }
+
+    &:hover {
+        overflow: hidden;
+        transition: all 0.4s;
+        transform: scale(1.1);
+        border-radius: 50%;
+    }
+}
+
+// /-----MEALLIST & SEARCHLIST-----/
+.mealListContainer,
+.searchListContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+
+    h1 {
+        padding: 20px 0px;
+        width: 250px;
+        margin: 0 auto;
+        color: white;
+        font-size: 25px;
+        text-decoration: none;
+    }
+}
+
+.mealItemContainer,
+.searchItemContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FF6E86;
+    border-radius: 10px;
+    padding: 10px 40px;
+    height: 500px;
+    transition: all 0.4s;
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        height: 110px;
+    }
+
+    img {
+        height: 250px;
+        width: 250px;
+        object-fit: contain;
+        margin: 0 auto;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.393);
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        transition: all 0.4s;
+    }
+}
+
+.searchContainer,
+.mealContainer {
+
+    h1 {
+        text-align: center;
+        padding: 2vh 0;
+    }
+}
+
+/*-------DETAILLIST ----*/
+
+.detailListContainer {
+    margin: 0 10%;
+
+    div {
+        text-align: center;
+        background-color: #FF6E86;
+        color: white;
+        border-radius: 10px;
+        margin: 20px 20px;
+        padding: 30px;
+
+        img {
+            width: 100%;
+            padding: 20px;
+            border-style: solid;
+            border-color: #FFAC61;
+        }
+
+        h1 {
+            padding: 30px 0;
+            font-size: 35px;
+        }
+
+        .mealDescription {
+            font-family: 'Roboto';
+            margin: 0;
+            padding: 0;
+            text-align: left;
+
+
+            span {
+                margin-right: 4%;
+            }
+        }
+
+        .descriptionContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            line-height: 2em;
+
+            div:nth-of-type(1) {
+                padding: 0;
+                width: 50%;
+            }
+
+            div:nth-of-type(2) {
+                padding: 0;
+                width: 30%;
+
+                button {
+                    background-color: white;
+                    color: #FF6E86;
+                    margin: 40px;
+                    padding: 10px;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    border-style: none;
+                }
+
+                .ingredientsDiv {
+                    width: 100%;
+                    margin: 0;
+                    font-size: 1.1rem;
+                    font-weight: 800;
+                }
+            }
+
+            .instructionsList {
+                text-align: left;
+                font-weight: 800;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

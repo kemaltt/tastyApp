@@ -1,0 +1,48 @@
+/*-------HEADER.SCSS--------*/
+
+.headerContainer {
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+
+    img {
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    h1 {
+        color: #FF6E86;
+        font-size: 40px;
+        font-size: 3.5rem;
+        padding: 10px;
+    }
+
+    form {
+
+        input[type="search"] {
+            padding: 10px;
+            margin: 20px;
+            width: 30%;
+            border-radius: 5px;
+            color: #FF6E86;
+            background-color: #FFAC614D;
+            border-color: transparent;
+        }
+
+        button {
+            // padding: 5px;
+            padding: 10px;
+            width: 100px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #FF6E85;
+            border-color: transparent;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+// footer.scss
+// /-------FOOTER--------/ 
+.footerContainer {
+    width: 100%;
+    height: 20vh;
+    padding-top: 60px;
+    text-align: center;
+
+    i {
+        font-size: 35px;
+        padding: 3px;
+        color: grey;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            transform: scale(1.3);
+            transition: all 0.4s ease-in-out;
+        }
+    }
+
+    .la-instagram:hover {
+        color: #FF6E85;
+    }
+
+    .la-youtube:hover {
+        color: #F22613;
+    }
+
+    .la-facebook-f:hover {
+        color: #1F3A93;
+    }
+}
