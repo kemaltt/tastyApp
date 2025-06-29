@@ -18,7 +18,7 @@ function App() {
   return (
     <AuthContextProvider>
       <div className="App"
-        style={{ color: white ? 'black' : 'white', backgroundColor: white ? 'white' : 'black' }}>
+        style={{ color: white ? 'black' : 'white', backgroundColor: white ? 'white' : '#2d2d2d' }}>
         <button
           className="darkmode-toggle"
           onClick={() => setWhite(!white)}
