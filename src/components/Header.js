@@ -1,16 +1,30 @@
 import logo from "./../images/tasty-logo-04 1.svg";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./../assets/css/Header.scss";
 
 
 const Header = () => {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setInput("");
-    e.preventDefault();
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (input) {
+      navigate(`/search/${input}`);
+      setInput("");
+    }
+  };
+
+  useEffect(() => {
+    if (input) {
+      navigate(`/search/${input}`);
+    }
+  }, [input, navigate]);
 
   return (
     <section className="headerContainer">
@@ -19,18 +33,14 @@ const Header = () => {
       </Link>
 
       <h1>Find a recipe, an idea, an inspiration...</h1>
-      <form onClick={handleChange} action="">
+      <form action="" onSubmit={handleSubmit}>
         <input
           style={{ outlineColor: "#FF6E85" }}
           type="search"
           placeholder="Type something to search"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={handleInputChange}
         />
-
-        <Link to={input ? `/search/${input}` : "/search/undefined"}>
-          <button type="submit">Search</button>
-        </Link>
       </form>
     </section>
   );

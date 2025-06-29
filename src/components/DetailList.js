@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 const DetailList = () => {
-  const [detail, setDetail] = useState([]);
+  const [detail, setDetail] = useState({});
   const [youTube, setYouTube] = useState(false);
   const { id } = useParams();
 
@@ -34,10 +34,10 @@ const DetailList = () => {
       let ingredient = detail[requestIngredient];
       let measure = detail[requestMeasure];
 
-      if (ingredient.value !== "") {
+      if (ingredient && ingredient !== "") {
         ingredients.push(ingredient);
       }
-      if (measure.value !== "") {
+      if (measure && measure !== "") {
         measures.push(measure);
       }
     }
@@ -75,7 +75,7 @@ const DetailList = () => {
         {youTube ? (
           <iframe
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             src={
@@ -83,7 +83,6 @@ const DetailList = () => {
                 ? `https://www.youtube.com/embed/${detail.strYoutube.slice(32)}`
                 : null
             }
-            frameBorder="0"
           />
         ) : null}
       </div>

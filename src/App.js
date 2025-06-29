@@ -19,7 +19,15 @@ function App() {
     <AuthContextProvider>
       <div className="App"
         style={{ color: white ? 'black' : 'white', backgroundColor: white ? 'white' : 'black' }}>
-        <button onClick={() => setWhite(!white)}> → {white ? 'Blackmode' : 'Whitemode'}</button>
+        <button
+          className="darkmode-toggle"
+          onClick={() => setWhite(!white)}
+          aria-label="Tema değiştir"
+        >
+          <span className="toggle-icon" role="img" aria-label={white ? "Gece Modu" : "Gündüz Modu"}>
+            {white ? '🌙' : '☀️'}
+          </span>
+        </button>
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
