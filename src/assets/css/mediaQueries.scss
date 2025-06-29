@@ -257,9 +257,10 @@
     .darkmode-toggle {
         top: 10px;
         right: 10px;
-        width: 28px;
-        height: 28px;
-        font-size: 1rem;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        font-size: 1.2rem;
     }
 
     .toggle-icon {
