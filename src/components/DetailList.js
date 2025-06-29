@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { Modal, Button } from 'react-bootstrap';
 
 const DetailList = () => {
   const [detail, setDetail] = useState({});
-  const [youTube, setYouTube] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -50,6 +51,9 @@ const DetailList = () => {
     return <div className="ingredientsDiv">{measuresInstructions}</div>;
   };
 
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
   return (
     <section className="detailListContainer">
       <div>
@@ -68,23 +72,38 @@ const DetailList = () => {
 
             {detail.strInstructions ? ingredientsList() : null}
 
-            <button onClick={() => setYouTube(!youTube)}>Watch on YouTube</button>
-
+            <button onClick={handleShow}>Watch on YouTube</button>
           </div>
         </div>
-        {youTube ? (
-          <iframe
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            src={
-              detail.strYoutube
-                ? `https://www.youtube.com/embed/${detail.strYoutube.slice(32)}`
-                : null
-            }
-          />
-        ) : null}
+
+        {/* Bootstrap YouTube Modal */}
+        <Modal show={showModal} onHide={handleClose} size="lg" centered>
+          <Modal.Header closeButton style={{ backgroundColor: '#1a1a1a', borderBottom: 'none' }}>
+            <Modal.Title style={{ color: '#fff', fontSize: '1.2rem' }}>
+              🎬 {detail.strMeal} - Recipe Video
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ padding: 0, backgroundColor: '#000' }}>
+            <div className="ratio ratio-16x9">
+              <iframe
+                title="YouTube video player"
+                className="rounded"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                src={
+                  detail.strYoutube
+                    ? `https://www.youtube.com/embed/${detail.strYoutube.slice(32)}`
+                    : null
+                }
+              />
+            </div>
+          </Modal.Body>
+          <Modal.Footer style={{ backgroundColor: '#1a1a1a', borderTop: 'none' }}>
+            <Button variant="outline-light" onClick={handleClose}>
+              Close Video
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </section>
   );
