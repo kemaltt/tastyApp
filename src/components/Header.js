@@ -1,5 +1,5 @@
 import logo from "./../images/tasty-logo-04 1.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./../assets/css/Header.scss";
 
@@ -8,23 +8,14 @@ const Header = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (input) {
-      navigate(`/search/${input}`);
-      setInput("");
+   const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInput(value);
+    if (value) {
+      navigate(`/search/${value}`);
     }
   };
 
-  useEffect(() => {
-    if (input) {
-      navigate(`/search/${input}`);
-    }
-  }, [input, navigate]);
 
   return (
     <section className="headerContainer">
@@ -33,7 +24,7 @@ const Header = () => {
       </Link>
 
       <h1>Find a recipe, an idea, an inspiration...</h1>
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" >
         <input
           style={{ outlineColor: "#FF6E85" }}
           type="search"
